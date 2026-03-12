@@ -1,0 +1,77 @@
+/* Custom styles and animation classes */
+:root {
+  --color-brand-red: #fe0000;
+  --color-brand-orange: #f88c32;
+  --color-brand-green: #344a09;
+  --color-brand-white: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  color: #1a1a1a;
+  background-color: #f9fafb;
+}
+
+/* Ken Burns Effect */
+@keyframes zoom-in-out {
+  0% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1.15);
+  }
+}
+
+.animate-ken-burns {
+  animation: zoom-in-out 25s ease-in-out infinite alternate;
+}
+
+/* Animation classes */
+.animate-on-scroll {
+  opacity: 0;
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+}
+
+.fade-up {
+  transform: translateY(20px);
+}
+
+.fade-left {
+  transform: translateX(-20px);
+}
+
+.fade-right {
+  transform: translateX(20px);
+}
+
+.zoom-in {
+  transform: scale(0.95);
+}
+
+.is-visible {
+  opacity: 1;
+  transform: translate(0) scale(1);
+}
+
+/* Delays */
+.delay-100 {
+  transition-delay: 100ms;
+}
+.delay-200 {
+  transition-delay: 200ms;
+}
+.delay-300 {
+  transition-delay: 300ms;
+}
+.delay-400 {
+  transition-delay: 400ms;
+}
+.delay-500 {
+  transition-delay: 500ms;
+}

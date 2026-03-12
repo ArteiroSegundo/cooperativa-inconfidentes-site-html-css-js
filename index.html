@@ -1,0 +1,1161 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cooperativa Inconfidentes</title>
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                red: "#FE0000",
+                orange: "#F88C32",
+                green: "#344A09",
+                white: "#ffffff",
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Lucide Icons via CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body class="selection:bg-brand-orange selection:text-white">
+    <!-- Navbar -->
+    <nav
+      id="navbar"
+      class="fixed w-full z-50 transition-all duration-300 bg-transparent py-4 border-b border-transparent"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center relative z-50">
+            <a href="#home" class="flex items-center gap-2">
+              <img
+                src="logo-cooperativa-inconfidentes-removedbg.png"
+                alt="Logo Cooperativa Inconfidentes"
+                class="h-12 w-auto transition-transform hover:scale-105"
+              />
+            </a>
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="#home"
+              class="desktop-link text-sm font-medium transition-colors hover:text-brand-orange text-gray-200 relative group"
+              >Início</a
+            >
+            <a
+              href="#sobre"
+              class="desktop-link text-sm font-medium transition-colors hover:text-brand-orange text-gray-200 relative group"
+              >Sobre Nós</a
+            >
+            <a
+              href="#servicos"
+              class="desktop-link text-sm font-medium transition-colors hover:text-brand-orange text-gray-200 relative group"
+              >Serviços</a
+            >
+            <a
+              href="#frota"
+              class="desktop-link text-sm font-medium transition-colors hover:text-brand-orange text-gray-200 relative group"
+              >Frota</a
+            >
+            <a
+              href="#beneficios"
+              class="desktop-link text-sm font-medium transition-colors hover:text-brand-orange text-gray-200 relative group"
+              >Benefícios</a
+            >
+            <a
+              href="#governanca"
+              class="desktop-link text-sm font-medium transition-colors hover:text-brand-orange text-gray-200 relative group"
+              >Governança</a
+            >
+            <a
+              href="#contato"
+              class="desktop-link text-sm font-medium transition-colors hover:text-brand-orange text-gray-200 relative group"
+              >Contato</a
+            >
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden flex items-center relative z-50">
+            <button
+              id="mobile-menu-btn"
+              aria-label="Abrir menu principal"
+              class="text-white hover:text-brand-orange focus:outline-none transition-colors"
+            >
+              <i data-lucide="menu"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div
+        id="mobile-menu-overlay"
+        class="fixed inset-0 bg-black/50 z-30 hidden transition-opacity duration-300 opacity-0 md:hidden"
+      ></div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="fixed top-0 right-0 h-full w-4/5 max-w-sm bg-white shadow-2xl z-40 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden pt-24 px-6 overflow-y-auto flex flex-col"
+      >
+        <div class="space-y-4 flex-grow">
+          <a
+            href="#home"
+            class="mobile-link block px-4 py-3 rounded-xl text-lg font-medium text-gray-700 hover:text-brand-orange hover:bg-orange-50 transition-all border-l-4 border-transparent hover:border-brand-orange"
+            >Início</a
+          >
+          <a
+            href="#sobre"
+            class="mobile-link block px-4 py-3 rounded-xl text-lg font-medium text-gray-700 hover:text-brand-orange hover:bg-orange-50 transition-all border-l-4 border-transparent hover:border-brand-orange"
+            >Sobre Nós</a
+          >
+          <a
+            href="#servicos"
+            class="mobile-link block px-4 py-3 rounded-xl text-lg font-medium text-gray-700 hover:text-brand-orange hover:bg-orange-50 transition-all border-l-4 border-transparent hover:border-brand-orange"
+            >Serviços</a
+          >
+          <a
+            href="#frota"
+            class="mobile-link block px-4 py-3 rounded-xl text-lg font-medium text-gray-700 hover:text-brand-orange hover:bg-orange-50 transition-all border-l-4 border-transparent hover:border-brand-orange"
+            >Frota</a
+          >
+          <a
+            href="#beneficios"
+            class="mobile-link block px-4 py-3 rounded-xl text-lg font-medium text-gray-700 hover:text-brand-orange hover:bg-orange-50 transition-all border-l-4 border-transparent hover:border-brand-orange"
+            >Benefícios</a
+          >
+          <a
+            href="#governanca"
+            class="mobile-link block px-4 py-3 rounded-xl text-lg font-medium text-gray-700 hover:text-brand-orange hover:bg-orange-50 transition-all border-l-4 border-transparent hover:border-brand-orange"
+            >Governança</a
+          >
+          <a
+            href="#contato"
+            class="mobile-link block px-4 py-3 rounded-xl text-lg font-medium text-gray-700 hover:text-brand-orange hover:bg-orange-50 transition-all border-l-4 border-transparent hover:border-brand-orange"
+            >Contato</a
+          >
+
+          <!-- Botões de Ação Rápida -->
+          <div class="flex gap-4 pt-4 mt-2 px-2">
+            <a
+              href="https://www.instagram.com/cooperativainconfidentes/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              class="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center text-gray-700 hover:text-brand-orange hover:bg-orange-50 transition-colors shadow-sm border border-gray-100"
+            >
+              <i data-lucide="instagram" class="w-6 h-6"></i>
+            </a>
+            <a
+              href="mailto:cooperativainconfidentes@gmail.com"
+              aria-label="Enviar E-mail"
+              class="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center text-gray-700 hover:text-brand-orange hover:bg-orange-50 transition-colors shadow-sm border border-gray-100"
+            >
+              <i data-lucide="mail" class="w-6 h-6"></i>
+            </a>
+            <a
+              href="tel:+5531995327612"
+              aria-label="Ligar para a Cooperativa"
+              class="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center text-gray-700 hover:text-brand-orange hover:bg-orange-50 transition-colors shadow-sm border border-gray-100"
+            >
+              <i data-lucide="phone" class="w-6 h-6"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Links Legais no Rodapé do Menu -->
+        <div class="py-8 border-t border-gray-100 mt-4">
+          <a
+            href="/termos-de-uso.html"
+            class="block text-sm text-gray-500 hover:text-brand-orange mb-3 transition-colors"
+          >
+            Termos de Uso
+          </a>
+          <a
+            href="/politica-de-privacidade.html"
+            class="block text-sm text-gray-500 hover:text-brand-orange transition-colors"
+          >
+            Política de Privacidade
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero Section -->
+      <section
+        id="home"
+        class="relative h-screen flex items-center justify-center overflow-hidden"
+      >
+        <div class="absolute inset-0 z-0">
+          <img
+            src="hero-background.jpg"
+            alt="Frota de caminhões e ônibus da Cooperativa Inconfidentes em uma estrada ao pôr do sol"
+            class="w-full h-full object-cover object-[65%_center] md:object-center animate-ken-burns"
+          />
+          <div
+            class="absolute inset-0 bg-brand-green/40 mix-blend-multiply"
+          ></div>
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
+          ></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto mt-16">
+          <h1
+            class="animate-on-scroll fade-up text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight drop-shadow-lg"
+          >
+            União e Solidez no Transporte Mineiro, Desde 2022
+          </h1>
+          <p
+            class="animate-on-scroll fade-up delay-200 text-lg md:text-xl text-gray-200 mb-10 max-w-3xl mx-auto"
+          >
+            Logística de Alta Performance: Do Transporte de Passageiros à
+            Movimentação de Cargas Pesadas e Internacionais
+          </p>
+          <div
+            class="animate-on-scroll fade-up delay-400 flex flex-col sm:flex-row gap-4 justify-center"
+          >
+            <a
+              href="#servicos"
+              class="bg-brand-red hover:bg-red-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-brand-red/30 hover:-translate-y-1 flex items-center justify-center gap-2"
+            >
+              Nossos Serviços
+              <i data-lucide="chevron-right" class="w-5 h-5"></i>
+            </a>
+            <a
+              href="#sobre"
+              class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex items-center justify-center gap-2"
+            >
+              Conheça a cooperativa
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="sobre" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-green mb-4">
+              Sobre a Inconfidentes
+            </h2>
+            <div class="w-24 h-1 bg-brand-orange mx-auto rounded-full"></div>
+          </div>
+
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-20"
+          >
+            <!-- Image Composition -->
+            <div class="lg:col-span-5 animate-on-scroll fade-right relative">
+              <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                <img
+                  src="sobre-cooperativa-inconfidentes.jpg"
+                  alt="Caminhão vermelho em uma estrada ao pôr do sol, simbolizando a operação da Cooperativa Inconfidentes"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"
+                ></div>
+              </div>
+
+              <!-- Floating Stats -->
+              <div
+                class="absolute -bottom-6 -right-6 md:-right-10 bg-white p-6 rounded-2xl shadow-xl border-l-4 border-brand-red max-w-[180px] hidden sm:block animate-float"
+              >
+                <h3 class="text-3xl font-bold text-brand-green mb-1">150+</h3>
+                <p class="text-sm text-gray-500 font-medium">
+                  Veículos Próprios
+                </p>
+              </div>
+            </div>
+
+            <!-- Text Content -->
+            <div
+              class="lg:col-span-7 animate-on-scroll fade-left space-y-6 text-left"
+            >
+              <h3 class="text-2xl font-semibold text-gray-800 leading-snug">
+                Uma história de união e força no transporte mineiro.
+              </h3>
+              <p class="text-gray-600 text-lg leading-relaxed">
+                Solidez e União no Transporte Mineiro. Constituída em
+                12/02/2022, iniciando operações em 01/06/2023 com foco em
+                excelência e sustentabilidade.
+              </p>
+              <p class="text-gray-600 text-lg leading-relaxed">
+                Contamos com uma frota agregada de cento e cinquenta (150)
+                veículos de vários modelos para atendimento às demandas
+                regionais das empresas e demais sociedades que buscam serviços
+                de transporte de qualidade.
+              </p>
+
+              <!-- Mobile Stats only -->
+              <div class="grid grid-cols-1 gap-4 sm:hidden pt-4">
+                <div class="bg-gray-50 p-4 rounded-xl text-center">
+                  <span class="block text-2xl font-bold text-brand-red"
+                    >150+</span
+                  >
+                  <span class="text-xs text-gray-500 uppercase">Veículos</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Missão -->
+            <div
+              class="group animate-on-scroll fade-up bg-white p-8 rounded-2xl shadow-lg border-t-4 border-brand-red hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-full flex flex-col"
+            >
+              <div
+                class="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-red transition-colors duration-300"
+              >
+                <i
+                  data-lucide="shield-check"
+                  class="w-8 h-8 text-brand-red group-hover:text-white transition-colors duration-300"
+                ></i>
+              </div>
+              <h3 class="text-2xl font-bold text-brand-green mb-4">Missão</h3>
+              <p class="text-gray-600 leading-relaxed flex-grow">
+                Prestar os melhores serviços para os seus cooperados,
+                proporcionando-lhes o alcance dos melhores resultados
+                econômico-financeiros e sociais, com sustentabilidade.
+              </p>
+            </div>
+
+            <!-- Visão -->
+            <div
+              class="group animate-on-scroll fade-up delay-200 bg-white p-8 rounded-2xl shadow-lg border-t-4 border-brand-orange hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-full flex flex-col"
+            >
+              <div
+                class="w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-orange transition-colors duration-300"
+              >
+                <i
+                  data-lucide="map-pin"
+                  class="w-8 h-8 text-brand-orange group-hover:text-white transition-colors duration-300"
+                ></i>
+              </div>
+              <h3 class="text-2xl font-bold text-brand-green mb-4">Visão</h3>
+              <p class="text-gray-600 leading-relaxed flex-grow">
+                Tornar-se a maior e mais competitiva cooperativa de transportes
+                de cargas do estado das Minas Gerais no médio prazo.
+              </p>
+            </div>
+
+            <!-- Princípios -->
+            <div
+              class="group animate-on-scroll fade-up delay-400 bg-white p-8 rounded-2xl shadow-lg border-t-4 border-brand-green hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-full flex flex-col"
+            >
+              <div
+                class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-green transition-colors duration-300"
+              >
+                <i
+                  data-lucide="heart-pulse"
+                  class="w-8 h-8 text-brand-green group-hover:text-white transition-colors duration-300"
+                ></i>
+              </div>
+              <h3 class="text-2xl font-bold text-brand-green mb-4">
+                Princípios
+              </h3>
+              <p class="text-gray-600 leading-relaxed flex-grow">
+                Livre adesão, gestão democrática, participação econômica,
+                autonomia e independência, educação, intercooperação e
+                compromisso com a comunidade.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="servicos" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-green mb-4">
+              Nossos Serviços
+            </h2>
+            <div class="w-24 h-1 bg-brand-red mx-auto rounded-full mb-6"></div>
+            <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+              Oferecemos soluções completas em transporte rodoviário municipal,
+              intermunicipal, interestadual e internacional.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+            <div
+              class="group animate-on-scroll fade-up bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-2xl hover:border-brand-red/20 transition-all duration-300 hover:-translate-y-1"
+            >
+              <div
+                class="mb-6 inline-block p-4 rounded-2xl bg-red-50 group-hover:bg-brand-red transition-colors duration-300"
+              >
+                <i
+                  data-lucide="truck"
+                  class="w-10 h-10 text-brand-red group-hover:text-white transition-colors duration-300"
+                ></i>
+              </div>
+              <h3 class="text-2xl font-bold text-brand-green mb-4">
+                Transporte de Cargas
+              </h3>
+              <p class="text-gray-600 leading-relaxed">
+                Municipal, Intermunicipal, Interestadual e Internacional.
+                Operamos com Alimentos, Medicamentos (AFE), Produtos Perigosos,
+                Minério, Resíduos e Cargas Indivisíveis.
+              </p>
+            </div>
+
+            <div
+              class="group animate-on-scroll fade-up delay-100 bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-2xl hover:border-brand-orange/20 transition-all duration-300 hover:-translate-y-1"
+            >
+              <div
+                class="mb-6 inline-block p-4 rounded-2xl bg-orange-50 group-hover:bg-brand-orange transition-colors duration-300"
+              >
+                <i
+                  data-lucide="bus"
+                  class="w-10 h-10 text-brand-orange group-hover:text-white transition-colors duration-300"
+                ></i>
+              </div>
+              <h3 class="text-2xl font-bold text-brand-green mb-4">
+                Transporte de Passageiros
+              </h3>
+              <p class="text-gray-600 leading-relaxed">
+                Individual e Coletivo, regular e por fretamento (contínuo,
+                eventual e turístico). Frota com automóveis executivos, vans,
+                micro-ônibus e ônibus.
+              </p>
+            </div>
+
+            <div
+              class="group animate-on-scroll fade-up delay-200 bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-2xl hover:border-brand-green/20 transition-all duration-300 hover:-translate-y-1"
+            >
+              <div
+                class="mb-6 inline-block p-4 rounded-2xl bg-green-50 group-hover:bg-brand-green transition-colors duration-300"
+              >
+                <i
+                  data-lucide="warehouse"
+                  class="w-10 h-10 text-brand-green group-hover:text-white transition-colors duration-300"
+                ></i>
+              </div>
+              <h3 class="text-2xl font-bold text-brand-green mb-4">
+                Logística e Armazém
+              </h3>
+              <p class="text-gray-600 leading-relaxed">
+                Soluções completas de logística de armazém, garantindo a
+                integridade e a gestão eficiente dos seus produtos com total
+                segurança.
+              </p>
+            </div>
+
+            <div
+              class="group animate-on-scroll fade-up delay-300 bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-2xl hover:border-brand-red/20 transition-all duration-300 hover:-translate-y-1"
+            >
+              <div
+                class="mb-6 inline-block p-4 rounded-2xl bg-red-50 group-hover:bg-brand-red transition-colors duration-300"
+              >
+                <i
+                  data-lucide="tractor"
+                  class="w-10 h-10 text-brand-red group-hover:text-white transition-colors duration-300"
+                ></i>
+              </div>
+              <h3 class="text-2xl font-bold text-brand-green mb-4">
+                Movimentação e Remoção
+              </h3>
+              <p class="text-gray-600 leading-relaxed">
+                Motoniveladoras, Escavadeiras, Retroescavadeiras, Rolo
+                Compressor de Asfalto, Guindastes, Transelevadores e Comboios.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Safety & Compliance Section -->
+      <section class="py-16 bg-brand-green text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="space-y-6">
+              <h3 class="text-2xl font-bold flex items-center gap-3">
+                <i
+                  data-lucide="file-check"
+                  class="text-brand-orange w-8 h-8"
+                ></i>
+                Registros Oficiais
+              </h3>
+              <ul class="space-y-3 text-gray-200 text-lg">
+                <li class="flex items-center gap-2">
+                  <div class="w-1.5 h-1.5 bg-brand-orange rounded-full"></div>
+                  CNPJ: 47.180.941/0002-07
+                </li>
+                <li class="flex items-center gap-2">
+                  <div class="w-1.5 h-1.5 bg-brand-orange rounded-full"></div>
+                  RNTRC (ANTT): 055906233
+                </li>
+                <li class="flex items-center gap-2">
+                  <div class="w-1.5 h-1.5 bg-brand-orange rounded-full"></div>
+                  Registro OCB: nº 00009694
+                </li>
+              </ul>
+            </div>
+            <div class="space-y-6">
+              <h3 class="text-2xl font-bold flex items-center gap-3">
+                <i data-lucide="shield" class="text-brand-orange w-8 h-8"></i>
+                Seguros Inclusos
+              </h3>
+              <div class="p-6 bg-white/10 rounded-2xl border border-white/20">
+                <p class="text-gray-100 leading-relaxed text-lg">
+                  RCTR-C (Responsabilidade Civil Carga), RCF-DC (Desaparecimento
+                  de Carga), RCF-DT (Danos a Terceiros) e Seguro Obrigatório de
+                  Passageiros.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Fleet Section -->
+      <section id="frota" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 class="text-3xl md:text-4xl font-bold text-brand-green mb-4">
+                Nossa Frota
+              </h2>
+              <div class="w-24 h-1 bg-brand-orange rounded-full mb-8"></div>
+              <p class="text-gray-600 text-lg mb-8">
+                Contamos com uma frota diversificada e moderna para atender a
+                todas as necessidades de transporte, garantindo segurança e
+                eficiência em cada viagem.
+              </p>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div
+                  class="bg-white p-6 rounded-2xl border border-gray-100 hover:border-gray-200 hover:shadow-lg transition-all duration-300"
+                >
+                  <h4
+                    class="text-xl font-semibold text-brand-orange mb-4 flex items-center gap-2"
+                  >
+                    <i data-lucide="truck" class="w-6 h-6"></i> Cargas
+                  </h4>
+                  <ul class="space-y-2 text-gray-600">
+                    <li>Utilitários e Camionetes</li>
+                    <li>Caminhões 3/4 e Tocos</li>
+                    <li>Trucks</li>
+                    <li>Carretas e Bitrens</li>
+                  </ul>
+                </div>
+                <div
+                  class="bg-white p-6 rounded-2xl border border-gray-100 hover:border-gray-200 hover:shadow-lg transition-all duration-300"
+                >
+                  <h4
+                    class="text-xl font-semibold text-brand-orange mb-4 flex items-center gap-2"
+                  >
+                    <i data-lucide="bus" class="w-6 h-6"></i> Passageiros
+                  </h4>
+                  <ul class="space-y-2 text-gray-600">
+                    <li>Automóveis (Executivos e Standard)</li>
+                    <li>Vans</li>
+                    <li>Micro-ônibus</li>
+                    <li>Ônibus</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="relative">
+              <div
+                class="absolute inset-0 bg-brand-red/10 rounded-3xl transform translate-x-4 translate-y-4 -z-10"
+              ></div>
+              <img
+                src="nossa-frota-cooperativa-inconfidentes.jpg"
+                alt="Frota de Ônibus e Caminhões"
+                class="relative rounded-3xl shadow-2xl object-cover h-[500px] w-full hover:scale-[1.02] transition-transform duration-500"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Benefits Section -->
+      <section id="beneficios" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-green mb-4">
+              Serviços e Benefícios para Cooperados
+            </h2>
+            <div
+              class="w-24 h-1 bg-brand-orange mx-auto rounded-full mb-6"
+            ></div>
+            <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+              Valorizamos nossos cooperados oferecendo uma ampla rede de suporte
+              e benefícios exclusivos.
+            </p>
+          </div>
+
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left"
+          >
+            <div
+              class="animate-on-scroll zoom-in p-6 border border-gray-100 rounded-2xl hover:border-brand-red/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group bg-gray-50 hover:bg-white"
+            >
+              <div
+                class="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-brand-red mb-6 shadow-sm group-hover:bg-brand-red group-hover:text-white transition-all duration-300"
+              >
+                <i data-lucide="wrench"></i>
+              </div>
+              <h3 class="text-xl font-bold text-brand-green mb-3">
+                Assistência 360º
+              </h3>
+              <p class="text-gray-600">
+                Gestão Jurídica, Contábil, Tributária e Financeira.
+              </p>
+            </div>
+            <div
+              class="animate-on-scroll zoom-in delay-100 p-6 border border-gray-100 rounded-2xl hover:border-brand-red/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group bg-gray-50 hover:bg-white"
+            >
+              <div
+                class="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-brand-red mb-6 shadow-sm group-hover:bg-brand-red group-hover:text-white transition-all duration-300"
+              >
+                <i data-lucide="graduation-cap"></i>
+              </div>
+              <h3 class="text-xl font-bold text-brand-green mb-3">Educação</h3>
+              <p class="text-gray-600">
+                Bolsas de Estudos para cursos Livres, Técnicos, Graduação e
+                Pós-Graduação.
+              </p>
+            </div>
+            <div
+              class="animate-on-scroll zoom-in delay-200 p-6 border border-gray-100 rounded-2xl hover:border-brand-red/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group bg-gray-50 hover:bg-white"
+            >
+              <div
+                class="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-brand-red mb-6 shadow-sm group-hover:bg-brand-red group-hover:text-white transition-all duration-300"
+              >
+                <i data-lucide="building-2"></i>
+              </div>
+              <h3 class="text-xl font-bold text-brand-green mb-3">Convênios</h3>
+              <p class="text-gray-600">
+                Plano de Saúde, Odontológico, Supermercados, Farmácias e
+                Instituições de Ensino.
+              </p>
+            </div>
+            <div
+              class="animate-on-scroll zoom-in delay-300 p-6 border border-gray-100 rounded-2xl hover:border-brand-red/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group bg-gray-50 hover:bg-white"
+            >
+              <div
+                class="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-brand-red mb-6 shadow-sm group-hover:bg-brand-red group-hover:text-white transition-all duration-300"
+              >
+                <i data-lucide="shield"></i>
+              </div>
+              <h3 class="text-xl font-bold text-brand-green mb-3">
+                Seguros e Fundos
+              </h3>
+              <p class="text-gray-600">
+                Cobertura Previdenciária, Seguros para Operações, Fundo de
+                Reserva e Investimentos.
+              </p>
+            </div>
+            <div
+              class="animate-on-scroll zoom-in delay-400 p-6 border border-gray-100 rounded-2xl hover:border-brand-red/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group bg-gray-50 hover:bg-white"
+            >
+              <div
+                class="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-brand-red mb-6 shadow-sm group-hover:bg-brand-red group-hover:text-white transition-all duration-300"
+              >
+                <i data-lucide="briefcase"></i>
+              </div>
+              <h3 class="text-xl font-bold text-brand-green mb-3">
+                Infraestrutura Própria
+              </h3>
+              <p class="text-gray-600">
+                Suporte Completo ao Transportador: Ponto de Abastecimento, Posto
+                de Molas, Oficina Mecânica, Restaurante e Hotel exclusivo para
+                cooperados.
+              </p>
+            </div>
+            <div
+              class="animate-on-scroll zoom-in delay-500 p-6 border border-gray-100 rounded-2xl hover:border-brand-red/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group bg-gray-50 hover:bg-white"
+            >
+              <div
+                class="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-brand-red mb-6 shadow-sm group-hover:bg-brand-red group-hover:text-white transition-all duration-300"
+              >
+                <i data-lucide="file-text"></i>
+              </div>
+              <h3 class="text-xl font-bold text-brand-green mb-3">
+                Tecnologias
+              </h3>
+              <p class="text-gray-600">
+                Roteirização, Rastreamento de Frota, Gestão Integrada e
+                Segurança.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Governance Section -->
+      <section id="governanca" class="py-20 bg-brand-green/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-green mb-4">
+              Governança
+            </h2>
+            <div class="w-24 h-1 bg-brand-red mx-auto rounded-full mb-6"></div>
+            <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+              Nossa gestão é fundamentada em transparência, ética e participação
+              democrática, assegurando a solidez do negócio e a confiança de
+              nossos cooperados e parceiros.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
+            <!-- Conselho de Administração -->
+            <div
+              class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300"
+            >
+              <h3
+                class="text-2xl font-bold text-brand-green mb-8 flex items-center gap-3"
+              >
+                <i data-lucide="users" class="text-brand-orange"></i> Conselho
+                de Administração
+              </h3>
+              <div class="space-y-6">
+                <div class="flex items-center gap-4">
+                  <img
+                    src="deyvson.jpg"
+                    alt="Deyvson de Nazareth"
+                    class="w-14 h-14 rounded-full object-cover border-2 border-brand-green/10"
+                  />
+                  <div>
+                    <h4 class="font-bold text-gray-900">Deyvson de Nazareth</h4>
+                    <p class="text-brand-red text-sm">Presidente</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-4">
+                  <img
+                    src="hugo.jpg"
+                    alt="Hugo Carneiro"
+                    class="w-14 h-14 rounded-full object-cover border-2 border-brand-green/10"
+                  />
+                  <div>
+                    <h4 class="font-bold text-gray-900">Hugo Carneiro</h4>
+                    <p class="text-brand-red text-sm">Diretor Administrativo</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-4">
+                  <img
+                    src="Cristiano.jpg"
+                    alt="Cristiano Teixeira"
+                    class="w-14 h-14 rounded-full object-cover border-2 border-brand-green/10"
+                  />
+                  <div>
+                    <h4 class="font-bold text-gray-900">Cristiano Teixeira</h4>
+                    <p class="text-brand-red text-sm">Diretor Operacional</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Conselho Fiscal -->
+            <div
+              class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300"
+            >
+              <h3
+                class="text-2xl font-bold text-brand-green mb-8 flex items-center gap-3"
+              >
+                <i data-lucide="shield-check" class="text-brand-orange"></i>
+                Conselho Fiscal
+              </h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="flex items-center gap-3">
+                  <img
+                    src="maxmiller.jpg"
+                    alt="Maxmiller da Silva"
+                    class="w-12 h-12 rounded-full object-cover border border-gray-100"
+                  />
+                  <div>
+                    <h4 class="font-bold text-gray-900 text-sm">
+                      Maxmiller da Silva
+                    </h4>
+                    <p class="text-brand-red text-xs">Coordenador</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <img
+                    src="carlos.jpg"
+                    alt="Carlos Henrique Santos"
+                    class="w-12 h-12 rounded-full object-cover border border-gray-100"
+                  />
+                  <div>
+                    <h4 class="font-bold text-gray-900 text-sm">
+                      Carlos Henrique Santos
+                    </h4>
+                    <p class="text-gray-500 text-xs">Titular</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <img
+                    src="matusalem.jpg"
+                    alt="Matusalém Silva"
+                    class="w-12 h-12 rounded-full object-cover border border-gray-100"
+                  />
+                  <div>
+                    <h4 class="font-bold text-gray-900 text-sm">
+                      Matusalém Silva
+                    </h4>
+                    <p class="text-gray-500 text-xs">Titular</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <img
+                    src="otavio.jpg"
+                    alt="Otavio Mafia"
+                    class="w-12 h-12 rounded-full object-cover border border-gray-100"
+                  />
+                  <div>
+                    <h4 class="font-bold text-gray-900 text-sm">
+                      Otavio Mafia
+                    </h4>
+                    <p class="text-gray-500 text-xs">Suplente</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <img
+                    src="roberto.jpg"
+                    alt="Roberto Viegas"
+                    class="w-12 h-12 rounded-full object-cover border border-gray-100"
+                  />
+                  <div>
+                    <h4 class="font-bold text-gray-900 text-sm">
+                      Roberto Viegas
+                    </h4>
+                    <p class="text-gray-500 text-xs">Suplente</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <img
+                    src="walter.jpg"
+                    alt="Walter Cardoso"
+                    class="w-12 h-12 rounded-full object-cover border border-gray-100"
+                  />
+                  <div>
+                    <h4 class="font-bold text-gray-900 text-sm">
+                      Walter Cardoso
+                    </h4>
+                    <p class="text-gray-500 text-xs">Suplente</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contato" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <!-- Title Block -->
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-green mb-4">
+              Fale Conosco
+            </h2>
+            <div
+              class="w-24 h-1 bg-brand-orange mx-auto rounded-full mb-6"
+            ></div>
+            <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+              Estamos prontos para atender suas necessidades de transporte.
+              Entre em contato conosco.
+            </p>
+          </div>
+
+          <!-- General Contact Methods -->
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto mb-16"
+          >
+            <div
+              class="flex items-center gap-4 p-4 rounded-xl bg-gray-50/50 hover:bg-gray-50 transition-colors duration-300 justify-center sm:justify-start"
+            >
+              <div
+                class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-red shrink-0 shadow-sm"
+              >
+                <i data-lucide="phone"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-brand-green">WhatsApp</h4>
+                <a
+                  href="https://wa.me/5531995327612?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20Cooperativa%20Inconfidentes."
+                  class="text-gray-600 hover:text-brand-orange transition-colors"
+                  >(31) 9 9532-7612</a
+                >
+              </div>
+            </div>
+            <div
+              class="flex items-center gap-4 p-4 rounded-xl bg-gray-50/50 hover:bg-gray-50 transition-colors duration-300 justify-center sm:justify-start"
+            >
+              <div
+                class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-red shrink-0 shadow-sm"
+              >
+                <i data-lucide="mail"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-brand-green">E-mail</h4>
+                <a
+                  href="mailto:cooperativainconfidentes@gmail.com"
+                  class="text-gray-600 hover:text-brand-orange transition-colors"
+                  >cooperativainconfidentes@gmail.com</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Maps and Addresses -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Mariana -->
+            <div
+              class="bg-white p-6 rounded-3xl border border-gray-100 shadow-lg"
+            >
+              <h3 class="text-xl font-bold text-brand-green mb-4">
+                Unidade Mariana (Matriz)
+              </h3>
+              <div class="flex items-start gap-4 mb-6">
+                <div
+                  class="w-10 h-10 bg-brand-red/10 rounded-full flex items-center justify-center text-brand-red shrink-0"
+                >
+                  <i data-lucide="map-pin" class="w-5 h-5"></i>
+                </div>
+                <p class="text-gray-600 mt-2">
+                  Rua Antônio Faustino da Rocha, nº 44, Sala 202, Centro.
+                </p>
+              </div>
+              <div class="rounded-xl overflow-hidden shadow-md">
+                <iframe
+                  src="https://maps.google.com/maps?q=Rua%20Ant%C3%B4nio%20Faustino%20da%20Rocha%2C%2044%2C%20Mariana%2C%20MG&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  width="100%"
+                  height="250"
+                  title="Mapa da Unidade Mariana"
+                  allowfullscreen=""
+                  loading="lazy"
+                  class="border-none"
+                ></iframe>
+              </div>
+            </div>
+            <!-- Rio de Janeiro -->
+            <div
+              class="bg-white p-6 rounded-3xl border border-gray-100 shadow-lg"
+            >
+              <h3 class="text-xl font-bold text-brand-green mb-4">
+                Unidade Rio de Janeiro
+              </h3>
+              <div class="flex items-start gap-4 mb-6">
+                <div
+                  class="w-10 h-10 bg-brand-red/10 rounded-full flex items-center justify-center text-brand-red shrink-0"
+                >
+                  <i data-lucide="map-pin" class="w-5 h-5"></i>
+                </div>
+                <p class="text-gray-600 mt-2">
+                  Rua da Alfândega, nº 100, 4º Andar, Centro.
+                </p>
+              </div>
+              <div class="rounded-xl overflow-hidden shadow-md">
+                <iframe
+                  src="https://maps.google.com/maps?q=Rua%20da%20Alf%C3%A2ndega%2C%20100%2C%20Rio%20de%20Janeiro%2C%20RJ&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  width="100%"
+                  height="250"
+                  title="Mapa da Unidade Rio de Janeiro"
+                  allowfullscreen=""
+                  loading="lazy"
+                  class="border-none"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-green text-white py-12 border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-8">
+          <div>
+            <a href="#home" class="block mb-6">
+              <img
+                src="logo-cooperativa-inconfidentes.png"
+                alt="Logo Cooperativa Inconfidentes"
+                class="h-12 w-auto"
+              />
+            </a>
+            <p class="text-gray-400 text-sm mb-4">CNPJ: 47.180.941/0002-07</p>
+            <p class="text-gray-500 text-xs uppercase tracking-wider mb-6">
+              Cooperativa de Transportes Rodoviários de Cargas e de Passageiros
+              Inconfidentes Ltda.
+            </p>
+            <p class="text-gray-400 text-sm mb-4">
+              Siga as nossas redes sociais e fique por dentro de todas as
+              novidades
+            </p>
+            <div class="flex gap-4">
+              <a
+                href="https://www.instagram.com/cooperativainconfidentes/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Siga-nos no Instagram"
+                class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-brand-orange transition-colors"
+              >
+                <i data-lucide="instagram" class="w-5 h-5"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-lg mb-6">Governança</h4>
+            <div class="space-y-4 text-sm text-gray-400">
+              <p>
+                Comprometidos com a ética, transparência e as melhores práticas
+                de governança corporativa.
+              </p>
+              <p>
+                Conselho de Administração e Conselho Fiscal atuantes para
+                garantir a sustentabilidade e segurança dos nossos cooperados e
+                clientes.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-lg mb-6">Links Rápidos</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li>
+                <a
+                  href="#sobre"
+                  class="hover:text-brand-orange transition-colors"
+                  >Sobre Nós</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#servicos"
+                  class="hover:text-brand-orange transition-colors"
+                  >Serviços</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#frota"
+                  class="hover:text-brand-orange transition-colors"
+                  >Frota</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#beneficios"
+                  class="hover:text-brand-orange transition-colors"
+                  >Seja um Cooperado</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#governanca"
+                  class="hover:text-brand-orange transition-colors"
+                  >Governança</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 gap-4"
+        >
+          <p>
+            &copy; 2024 Cooperativa Inconfidentes. Todos os direitos reservados.
+          </p>
+          <div class="flex gap-4">
+            <a
+              href="/termos-de-uso.html"
+              class="hover:text-white transition-colors"
+              >Termos de Uso</a
+            >
+            <a
+              href="/politica-de-privacidade.html"
+              class="hover:text-white transition-colors"
+              >Política de Privacidade</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a
+      href="https://wa.me/5531995327612?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20Cooperativa%20Inconfidentes."
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Fale conosco pelo WhatsApp"
+      class="fixed bottom-6 right-6 z-50 group flex items-center justify-center"
+    >
+      <span
+        class="absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75 animate-ping"
+      ></span>
+      <div
+        class="relative bg-[#25D366] p-4 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 flex items-center justify-center"
+      >
+        <!-- WhatsApp SVG Icon -->
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+          fill="white"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+          />
+        </svg>
+      </div>
+    </a>
+
+    <!-- Cookie Consent Banner -->
+    <div
+      id="cookie-banner"
+      class="fixed bottom-0 left-0 w-full bg-gray-900/95 backdrop-blur text-white p-4 z-[60] hidden transition-transform translate-y-full"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4"
+      >
+        <p class="text-sm text-gray-300 text-center sm:text-left">
+          Utilizamos cookies para melhorar sua experiência. Ao continuar
+          navegando, você concorda com nossa
+          <a
+            href="/politica-de-privacidade.html"
+            class="text-brand-orange hover:underline"
+            >Política de Privacidade</a
+          >
+          e
+          <a
+            href="/termos-de-uso.html"
+            class="text-brand-orange hover:underline"
+            >Termos de Uso</a
+          >.
+        </p>
+        <button
+          id="accept-cookies"
+          class="bg-brand-red hover:bg-red-700 text-white px-6 py-2 rounded-lg text-sm font-semibold transition-colors whitespace-nowrap"
+        >
+          Aceitar e Continuar
+        </button>
+      </div>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="/script.js"></script>
+  </body>
+</html>
