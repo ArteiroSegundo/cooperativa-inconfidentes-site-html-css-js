@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const navbar = document.getElementById("navbar");
   const desktopLinks = document.querySelectorAll(".desktop-link");
   const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+  const headerLogoText = document.getElementById("header-logo-text");
   let isMenuOpen = false;
 
   const updateNavbarStyle = () => {
@@ -19,6 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
         link.classList.remove("text-gray-200");
         link.classList.add("text-gray-700");
       });
+      // Remove filter (original colors)
+      headerLogoText.classList.remove("brightness-0", "invert");
     } else {
       // Only transparent if at top AND menu closed
       navbar.classList.add("bg-transparent", "py-4");
@@ -29,6 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
         link.classList.add("text-gray-200");
         link.classList.remove("text-gray-700");
       });
+      // Add white filter (makes logo monochrome white)
+      headerLogoText.classList.add("brightness-0", "invert");
     }
   };
 

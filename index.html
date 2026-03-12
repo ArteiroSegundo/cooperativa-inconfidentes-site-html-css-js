@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cooperativa Inconfidentes</title>
 
+    <link rel="icon" href="/favicon.png" type="image/png" />
+
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -39,11 +41,17 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center">
           <div class="flex items-center relative z-50">
-            <a href="#home" class="flex items-center gap-2">
+            <a href="#home" class="flex flex-col items-center">
               <img
-                src="logo-cooperativa-inconfidentes-removedbg.png"
-                alt="Logo Cooperativa Inconfidentes"
-                class="h-12 w-auto transition-transform hover:scale-105"
+                src="logo-cooperativa-inconfidentes-parte-01.png"
+                alt="Logo Cooperativa"
+                class="h-8 w-auto transition-transform hover:scale-105"
+              />
+              <img
+                id="header-logo-text"
+                src="logo-cooperativa-inconfidentes-parte-02.png"
+                alt="Inconfidentes"
+                class="h-2.5 w-auto transition-all duration-300 mt-0.5 hover:scale-105"
               />
             </a>
           </div>
@@ -878,10 +886,10 @@
 
           <!-- General Contact Methods -->
           <div
-            class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto mb-16"
+            class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16"
           >
             <div
-              class="flex items-center gap-4 p-4 rounded-xl bg-gray-50/50 hover:bg-gray-50 transition-colors duration-300 justify-center sm:justify-start"
+              class="flex items-center gap-4 p-4 rounded-xl bg-gray-50/50 hover:bg-gray-50 transition-colors duration-300 justify-center md:justify-start"
             >
               <div
                 class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-red shrink-0 shadow-sm"
@@ -898,7 +906,7 @@
               </div>
             </div>
             <div
-              class="flex items-center gap-4 p-4 rounded-xl bg-gray-50/50 hover:bg-gray-50 transition-colors duration-300 justify-center sm:justify-start"
+              class="flex items-center gap-4 p-4 rounded-xl bg-gray-50/50 hover:bg-gray-50 transition-colors duration-300 justify-center md:justify-start"
             >
               <div
                 class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-red shrink-0 shadow-sm"
@@ -911,6 +919,25 @@
                   href="mailto:cooperativainconfidentes@gmail.com"
                   class="text-gray-600 hover:text-brand-orange transition-colors"
                   >cooperativainconfidentes@gmail.com</a
+                >
+              </div>
+            </div>
+            <div
+              class="flex items-center gap-4 p-4 rounded-xl bg-gray-50/50 hover:bg-gray-50 transition-colors duration-300 justify-center md:justify-start"
+            >
+              <div
+                class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-red shrink-0 shadow-sm"
+              >
+                <i data-lucide="instagram"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-brand-green">Instagram</h4>
+                <a
+                  href="https://www.instagram.com/cooperativainconfidentes/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-gray-600 hover:text-brand-orange transition-colors"
+                  >@cooperativainconfidentes</a
                 >
               </div>
             </div>
