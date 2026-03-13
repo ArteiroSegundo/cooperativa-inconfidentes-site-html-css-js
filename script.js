@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   window.addEventListener("scroll", updateNavbarStyle);
+  updateNavbarStyle();
 
   // Mobile menu toggle
   const mobileMenu = document.getElementById("mobile-menu");
